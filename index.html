@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>portfolio</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+      <style>
+            html {
+                  scroll-behavior: smooth;
+                  }
+
+                  * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+                  }
+
+                  body {
+                  font-family: "Rubik", sans-serif;
+                  width: 100%;
+                  overflow-x: hidden;
+                  }
+
+                  /* NAVBAR */
+                  nav {
+                  position: sticky;
+                  top: 0;
+                  z-index: 999;
+                  border-bottom: 1px solid #ccccccdf;
+                  background-color: #fff;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 10px 0;
+                  }
+
+                  nav a {
+                  padding: 20px;
+                  color: rgb(0, 92, 98);
+                  text-decoration: none;
+                  transition: 0.3s;
+                  }
+
+                  nav a:hover {
+                  color: #ff0000;
+                  border-bottom:solid #ff0000;
+                  transform: translateY(-3px);
+                  border-width: 4px;
+                  }
+
+                  .logo {
+                  color:rgb(0, 92, 98);
+                  margin-right: 100px;
+                  margin-left: 50px;                  
+                  }
+                  .hamburger {
+                  display: none;
+                  font-size: 28px;
+                  cursor: pointer;
+                  color: rgb(0, 92, 98);
+                  padding: 10px;
+                  }
+                  .menu-close {
+                  display: none;
+                  }
+
+                  .hamburger.active .menu-open {
+                  display: none;
+                  }
+
+                  .hamburger.active .menu-close {
+                  display: inline;
+                  }
+
+                  /* HOME */
+                  .homepage {
+                  background-color: rgb(0, 113, 121);
+                  color: white;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 40px 20px;
+                  min-height: 80vh;
+                  }
+
+                  .home-grid {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 40px;
+                  align-items: center;
+                  justify-content: center;
+                  text-align: center;
+                  }
+
+                  .home-content h1,
+                  .home-content h2 {
+                  text-align: center;
+                  }
+                  
+                  .home-content{
+                  animation: in 5s ease-out;
+                  }
+
+                  .home-pic {
+                  width: 200px;
+                  border-radius: 10px;
+                  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+                  }
+
+                  /* ABOUT */
+                  .me-section {
+                  min-height: 70vh;
+                  background-image: url(photos/3d.png);
+                  background-position: center;
+                  background-size: cover;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  padding: 30px;
+                  }
+                  .me-section > h2 {
+                  text-align: center;
+                  color: rgb(255, 255, 255);
+                  
+                  }
+                  .contabout {
+                  max-width: 600px;
+                  width: 90%;
+                  background-color: rgba(0, 113, 121, 0.911);
+                  color: white;
+                  padding: 30px;
+                  border-radius: 10px;
+                  margin: auto;
+                  text-align: center;
+                  }
+
+                  /* SKILLS */
+                  .skills-section {
+                  min-height: 65vh;
+                  background: rgb(0, 113, 121);
+                  padding: 40px 20px;
+                  }
+
+                  .skills-section > h2 {
+                  text-align: center;
+                  color: white;
+                  margin-bottom: 30px;
+                  }
+
+                  .skills-container {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                  gap: 20px;
+                  }
+
+                  .skill-holder {
+                  background-image: url(photos/39202392_dr15.jpg);
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  padding: 20px;
+                  border-radius: 10px;
+                  box-shadow: 0 3px 4px rgba(25, 25, 25, 0.3);
+                  }
+                  .skill-holder h3 {
+                  color: rgb(0, 113, 121);
+                  margin-bottom: 10px;
+                  }
+                  .skill-holder ul {
+                  list-style: none;
+                  }
+
+                  /* CONTACT */
+                  .contact-section {
+                  min-height: 60vh;
+                  background: rgb(0, 113, 121);
+                  padding: 50px 20px;
+                  color: white;
+                  text-align: center;
+                  }
+                  .contact-section > h2 {
+                  text-align: center;
+                  padding-bottom: 80px;
+                  }
+                  .container-contact {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 40px;
+                  justify-content: center;
+                  }
+
+                  .contact-form {
+                  width: 100%;
+                  max-width: 420px;
+                  background: rgb(0, 113, 121);
+                  padding: 25px;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+                  }
+                  .contact-form:hover{
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.836);
+                  }
+                  .contact-section input,
+                  textarea {
+                  width: 100%;
+                  padding: 10px;
+                  margin: 8px 0;
+                  border-radius: 8px;
+                  border: 1px solid #000;
+                  }
+
+                  .contact-section button {
+                  width: 100%;
+                  padding: 12px;
+                  border-radius: 8px;
+                  background:gold;
+                  border: none;
+                  color: rgb(42, 42, 42);
+                  cursor: pointer;
+                  }
+                  .contact-section button:hover {
+                  background: rgb(29, 255, 108);
+                  }
+
+                  .contact-details p {
+                  color: white;
+                  }
+                  .contact-details {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  }
+                  .success-message {
+                  display: none;
+                  padding: 10px;
+                  background: #4ade80;
+                  color: white;
+                  margin-top: 15px;
+                  border-radius: 8px;
+                  text-align: center;
+                  }
+                  
+                  /* FOOTER */
+                  .social-media {
+                  padding: 10px;
+                  }
+                  .social-media a {
+                  text-decoration: none;
+                  font-size: 25px;
+                  margin: 10px;
+                  color: rgb(0, 113, 121);
+                  }
+                  .social-media a:hover {
+                  color: rgb(255, 0, 255);
+                  }
+
+                  footer {
+                  padding: 20px;
+                  text-align: center;
+                  }
+                  /*ANIMATION*/
+
+                  @keyframes in{
+                  from{transform: translateX(-20px);
+                   } 
+                   to{
+                        transform: translateX(0);
+                   }}
+
+
+                  @media (max-width: 900px) {
+
+                        nav {
+                              justify-content: space-between;
+                              padding: 10px 20px;
+                        }
+                        .contact-section {
+                        padding: 30px 15px;
+                        }
+
+                        .hamburger {
+                              display: block;
+                        }
+
+                        .nav-links {
+                              display: none;
+                              flex-direction: column;
+                              width: 100%;
+                              background: #fff;
+                              text-align: center;
+                              padding: 10px 0;
+                        }
+
+                        .nav-links a {
+                              padding: 12px 0;
+                              border-bottom: 1px solid #ccc;
+                        }
+
+                        .nav-links.show {
+                              display: flex;
+                        }
+             }
+      </style>
+
+</head>
+<body>
+      <nav>
+              <h1 class="logo">NB</h1>    
+
+                  <div class="hamburger">
+                        <i class="fas fa-bars menu-open"></i>
+                        <i class="fas fa-times menu-close"></i>
+                  </div>
+
+                  <div class="nav-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#contact">Contact</a>
+                  </div>
+      </nav>
+
+      <section id="home" class="homepage">
+            <div class="home-grid">
+                  <div class="home-content">
+                        <h2>Hello there</h2>
+                        <h1>I'm <span style="color: rgba(255, 255, 255, 0.524);">Nhlaluko Baloyi</span></h1>
+                        <p1>I design and develop user‑friendly websites that make technology</p>
+                        <p>simple and enjoyable.</p1> <br> <br>
+                        <a style="color: antiquewhite; padding: 5px;text-shadow: 1px 2px #000;" href="cv.pdf" download>Download My CV</a>
+                  </div>
+                   <img class="home-pic" src="/photos/nhlalukocrop.jpg" alt="profile">
+            </div>
+      </section>
+
+      <section id="about" class="me-section">
+            <h2><strong>About Me</strong></h2>
+            <div class="contabout">
+                  <p1>I am a motivated and passionate IT student with a growing interest in web development and 3D Animation. I enjoy building user friendly websites using HTML, CSS, and JavaScript, and I am always interested in learning new technologies. My goal is to grow into a developer who creates creative and useful sites that people genuinely enjoy using.</p2>
+            </div>
+      </section>
+
+      <section id="skills" class="skills-section">
+            <h2>Skills</h2>
+      <div class="skills-container">
+
+            <div class="skill-holder">
+            <h3>Programming</h3>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>Visual Basic</li>
+            </ul>
+            </div>
+
+            <div class="skill-holder">
+            <h3>Networking, Cloud & IT Support</h3>
+            <ul>
+                <li>IT Essentials 8</li>
+                <li>CCNA</li>
+                <li>Azure Fundamentals</li>
+                <li>GitHub</li>
+                <li>Microsoft Office <span style="color: #000283;">(Word, Excel, Visio, PowerPoint, Outlook)</span></li>
+            </ul>
+            </div>
+
+            <div class="skill-holder">
+            <h3>Databases</h3>
+            <ul>
+                <li>MySQL</li>
+                <li>Oracle DB</li>
+            </ul>
+            </div>
+
+            <div class="skill-holder">
+            <h3>Soft Skills</h3>
+            <ul>
+                <li>Problem Solving</li>
+                <li>Excellent Teamwork & Communication</li>
+                <li>Adaptability & Fast Learning</li>
+                <li>Detail Oriented</li>
+            </ul>
+            </div>
+      </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+            <h2>Get in touch</h2>
+            <div class="container-contact">
+                  
+                  <div class="contact-form">
+                        <form action="https://formsubmit.co/nhlalukogb@gmail.com" method="POST" id="contactForm">
+                              <input type="hidden" name="_captcha" value="false">
+                              <!-- Redirecting after one submit -->
+                              <input type="hidden" name="_next" value="https://yourwebsite.github.io/thank-you.html">
+                              <label for="name">Name</label>
+                                    <input type="text" name="name" placeholder="e.g Nhlaluko" required>
+                              <label for="email">Email Address</label>
+                                    <input type="email" name="email" placeholder="e.g. example@gmail.com" required>
+                              <textarea name="message" placeholder="Message" rows="4" required></textarea>
+                              <button type="submit">Send Message</button>
+                        </form>
+                  </div>
+
+                  <div class="contact-details">
+                        <label><strong>Email</strong> </label>
+                        <p>Nhlalukogb@gmail.com</p> 
+                        <br>
+                        <label><strong>Phone</strong></label>
+                        <p>067-365-5136 or 067-369-8193</p>
+                  </div>
+
+            </div>
+                  <div class="success-message" id="successBox">
+                        Message sent.
+                  </div>
+
+      </section>
+
+      <footer>
+            <div class="social-media">
+                  <a href="https://facebook.com/nhlaluko.baloyi.98" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                  </a>
+
+                  <a href="https://wa.me/27673608193" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                  </a>
+
+                  <a href="https://github.com/NhlalukoBaloyi" target="_blank">
+                        <i class="fab fa-github"></i>
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/nhlaluko-baloyi-89a847391/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                  </a>
+            </div>
+            <p1>&copy 2025 Nhlaluko Gift Baloyi Portfolio. All Rights Reserved </p1>
+      </footer>
+    
+      <script>
+      //send the message
+      const form = document.getElementById("contactForm");
+      const successBox = document.getElementById("successBox");
+
+      form.addEventListener("submit", function() {
+            successBox.style.display = "block";
+      });
+      //hamburger
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+            hamburger.classList.toggle("active");
+      });
+
+      </script>
+
+</body>
+</html>
